@@ -1,0 +1,66 @@
+class fraction:
+    def __init__(self,n,d):
+        self.num=n
+        self.den=d
+    def __str__(self):
+        return ("{}/{}".format(self.num,self.den))
+
+
+    def __add__(self,sec):
+        if (self.den==sec.den):
+            num=self.num+sec.num
+            den=self.den
+        else:
+            num=self.num*sec.den + sec.num*self.den
+            den=self.den * sec.den 
+
+        return "{}/{}".format(num,den)
+
+
+        
+
+    def __sub__(self,sec):
+        if (self.den==sec.den):
+            num=self.num-sec.num
+            den=self.den
+
+        else:
+            num=self.num*sec.den + sec.num*self.den
+            den=self.den * sec.den 
+        return "{}/{}".format(num,den)
+
+
+
+    def __mul__(self,sec):
+    
+        num=self.num * sec.num
+        den=self.den * sec.den 
+
+        return "{}/{}".format(num,den)
+
+    def __truediv__(self,sec):
+        if (self.den==sec.den):
+            num=self.num
+            den=sec.num
+        else:
+            num=self.num*self.den
+            den=self.den * sec.num 
+
+        return "{}/{}".format(num,den)
+
+x=int(input("Enter num number "))
+y=int(input("Enter den number"))
+x2=int(input("Enter num number "))
+y2=int(input("Enter den number"))
+f1=fraction(x,y)
+f2=fraction(x2,y2)
+print(f1)
+print(f2)
+print(f1 + f2)
+print(f1-f2)
+print(f1*f2)
+print(f1/f2)
+
+print(type(f1))
+
+            
